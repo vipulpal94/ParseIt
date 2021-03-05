@@ -9,8 +9,6 @@ namespace ParseIt
         static void Main(string[] args)
         {
             string testString1 = "1,2,3,5,8,131,21,34";
-
-
             List<string> test1 = ParseIt(testString1,3);
 
             if (test1.Count != 7)
@@ -19,10 +17,8 @@ namespace ParseIt
             if(test1[4] != "131")
                 Console.WriteLine("Sorry Try again");
 
-
             string testString2 = "";
             List<string> test2 = ParseIt(testString2, 5);
-
             Console.WriteLine("You Win!");
         }
 
@@ -53,8 +49,10 @@ namespace ParseIt
         {
             List<string> rtVal = new List<string>();
 
-            //To check if length of individual parsed number is greater than pieceLength (which should not be allowed in any case) 
-            //Feel free to comment the below line and remove the Linq library call and run the code.
+            //To check if length of individual parsed number is greater than pieceLength 
+            //(which should not be allowed in any case) 
+            //Feel free to comment the below 4 lines and 
+            //remove the Linq library call (on line 3) and run the code.
             theString.Split(',').ToList()
                 .ForEach(f => {
                     if (f.Length > pieceLength)
@@ -76,7 +74,6 @@ namespace ParseIt
                     j = i + pieceLength - 1;
                 }
             }
-
             return rtVal;
         }
     }
